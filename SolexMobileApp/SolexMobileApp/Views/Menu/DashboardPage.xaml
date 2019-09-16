@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:Controls="clr-namespace:SolexMobileApp.Controls"
+             x:Class="SolexMobileApp.Views.Menu.DashboardPage">
+
+	<StackLayout VerticalOptions="FillAndExpand">
+
+        <StackLayout x:Name="LogoStack">
+            <Image x:Name="LoginIcon" Source="LoginIcon" Margin="0,80,0,0" />
+            <Label Text="{Binding Model.Constants.AppName}" FontSize="Medium" VerticalTextAlignment="Center" VerticalOptions="Center" HorizontalTextAlignment="Center"/>
+        </StackLayout>
+
+        <StackLayout Padding="30,60,30,0">
+            <Controls:XButton Text="Listado de Táreas" 
+                        Clicked="MainListOpen"
+                        TextColor="White" />
+            <Controls:XButton Text="Histórico" 
+                        Clicked="HistoryPage"
+                        TextColor="White" />
+            <Controls:XButton Text="Cierre del día" 
+                        Clicked="ClosingOfTheDay"
+                        TextColor="White" 
+                        IsVisible="False" />
+            <Controls:XButton Text="Cubicación Manual" 
+                        Clicked="CubingPage"
+                        TextColor="White" />
+            <Controls:XButton Text="Configuración" 
+                        Clicked="Settings"
+                        TextColor="White" />
+            <Controls:XButton Text="Salir" 
+                        Clicked="Logout"
+                        TextColor="White" />
+        </StackLayout>
+
+	</StackLayout>
+
+</ContentPage>

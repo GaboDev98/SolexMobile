@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SolexMobileApp.Views.DetailViews.SettingsViews.SettingsScreen"
+             Title="Configuración">
+    
+    <StackLayout x:Name="MainLayout" Padding="20,20,20,20">
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.80*" />
+                <RowDefinition Height="0.20*" />
+            </Grid.RowDefinitions>
+
+            <StackLayout Grid.Row="0" x:Name="Inputs" VerticalOptions="Start">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="0.50*" />
+                        <RowDefinition Height="0.50*" />
+                    </Grid.RowDefinitions>
+                    <Label Grid.Row="0" Text="Url de Solex" FontSize="Medium" Parent="10,0,10,0" VerticalOptions="Start" />
+                    <Picker Grid.Row="1" VerticalOptions="Start" 
+                        x:Name="PickerListUrlsSolex"
+                        Title="Seleccione el sitio..."
+                        SelectedItem="{ Binding SelectedUrlSolex }"
+                        SelectedIndexChanged="OnPickerSelectedUrlSolexIndexChanged">
+                        <Picker.ItemsSource>
+                            <x:Array Type="{x:Type x:String}">
+                                <x:String>Solex Pro</x:String>
+                                <x:String>Solex Test</x:String>
+                                <x:String>Solex Pre</x:String>
+                                <x:String>Solex 2</x:String>
+                                <x:String></x:String>
+                            </x:Array>
+                        </Picker.ItemsSource>
+                    </Picker>
+                </Grid>
+            </StackLayout>
+            
+            <StackLayout Grid.Row="1" x:Name="Buttons" VerticalOptions="Start">
+                <Button x:Name="Btn_SaveSettings" 
+                        Style="{StaticResource buttonStyle}" 
+                        Text="Guardar ajustes" 
+                        TextColor="White"
+                        Clicked="SaveSettings"/>
+            </StackLayout>
+        </Grid>
+        
+    </StackLayout>
+    
+</ContentPage>

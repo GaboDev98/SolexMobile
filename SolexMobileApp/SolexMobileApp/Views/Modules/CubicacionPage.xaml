@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SolexMobileApp.Views.Modules.CubicacionPage" 
+             Title="Cubicación Mobile">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem x:Name="Btn_CapturePhoto" Icon="ic_camera_enhance_white_24dp.png" Text="Nueva foto" />
+    </ContentPage.ToolbarItems>
+
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="StartAndExpand">
+
+            <StackLayout VerticalOptions="FillAndExpand">
+                <Label x:Name="Labl_Connectivity" HorizontalTextAlignment="Center" TextColor="White" BackgroundColor="Red" />
+            </StackLayout>
+
+            <StackLayout.Padding>
+                <OnIdiom x:TypeArguments="Thickness">
+                    <OnIdiom.Phone>25, 20, 25, 0</OnIdiom.Phone>
+                    <OnIdiom.Tablet>120, 40, 120, 0</OnIdiom.Tablet>
+                </OnIdiom>
+            </StackLayout.Padding>
+
+            <ActivityIndicator x:Name="ActivitySpinner" Color="Blue" IsRunning="True" />
+
+            <StackLayout x:Name="EntriesCubicacion">
+                <Entry x:Name="Entry_CodeBars" Placeholder="Pistolee el código de barras..." Keyboard="Numeric" />
+                <Grid Margin="0,20,0,0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="0.50*" />
+                        <ColumnDefinition Width="0.50*" />
+                    </Grid.ColumnDefinitions>
+                    <Entry Grid.Column="0" x:Name="Entry_Alto" Placeholder="Alto" Keyboard="Numeric" />
+                    <Entry Grid.Column="1" x:Name="Entry_Ancho" Placeholder="Ancho" Keyboard="Numeric" />
+                </Grid>
+                <Grid Margin="0,20,0,0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="0.50*" />
+                        <ColumnDefinition Width="0.50*" />
+                    </Grid.ColumnDefinitions>
+                    <Entry Grid.Column="0" x:Name="Entry_Largo" Placeholder="Largo" Keyboard="Numeric" />
+                    <Entry Grid.Column="1" x:Name="Entry_Peso" Placeholder="Peso" Keyboard="Numeric" />
+                </Grid>
+                <StackLayout Margin="0,20,0,0">
+                    <Label x:Name="Count_Units" IsVisible="False" HorizontalTextAlignment="Center" />
+                </StackLayout>
+            </StackLayout>
+
+            <StackLayout x:Name="ButtonsCubicacion" Margin="0,20,0,0" VerticalOptions="End">
+                <Button x:Name="Btn_Send" Style="{StaticResource buttonStyle}" Text="Enviar datos" Clicked="EnviarMedidasAsync" />
+            </StackLayout>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

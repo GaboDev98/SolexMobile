@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:XLabs.Forms.Controls;assembly=XLabs.Forms"
+             x:Class="SolexMobileApp.Views.Modules.CubingPage"
+             Title="Cubicación Manual">
+    
+    <ContentPage.ToolbarItems>
+        <ToolbarItem x:Name="Btn_ClearRows" Icon="ic_clear_white_24dp.png" Text="Limpiar campos" />
+        <ToolbarItem x:Name="Btn_CaptureNewPhoto" Icon="ic_camera_enhance_white_24dp.png" Text="Nueva foto" />
+        <ToolbarItem x:Name="Btn_ScannerCodeBars" Icon="ic_refresh_barcode_white_24dp.png" Text="Escanear código de barras" />
+    </ContentPage.ToolbarItems>
+
+    <ContentPage.Content>
+        <ScrollView VerticalOptions="StartAndExpand">
+            <StackLayout VerticalOptions="FillAndExpand" Padding="20,5,20,10" Orientation="Vertical">
+
+                <StackLayout VerticalOptions="FillAndExpand">
+                    <Label x:Name="Labl_Connectivity" HorizontalTextAlignment="Center" TextColor="White" BackgroundColor="Red" />
+                </StackLayout>
+
+                <StackLayout HorizontalOptions="FillAndExpand">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="0.333*" />
+                            <RowDefinition Height="0.333*" />
+                            <RowDefinition Height="0.333*" />
+                        </Grid.RowDefinitions>
+                        <Entry Grid.Row="0" x:Name="Entry_CodeBars" Placeholder="Código de barras..." Keyboard="Numeric" />
+                        <Label Grid.Row="1">Digite las medidas en centímetros y el peso en kilos.</Label>
+                        <Grid Grid.Row="2">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="0.10*" />
+                                <ColumnDefinition Width="0.90*" />
+                            </Grid.ColumnDefinitions>
+                            <controls:CheckBox Grid.Column="0" x:Name="Checked_All_Units" Checked="False" />
+                            <Label Grid.Column="1" FontSize="Small">Marque esta casilla para aplicar las medidas a todas las unidades de la guía.</Label>
+                        </Grid>
+                    </Grid>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="0.50*" />
+                            <ColumnDefinition Width="0.50*" />
+                        </Grid.ColumnDefinitions>
+                        <Entry Grid.Column="0" x:Name="Entry_Largo" Placeholder="Largo" Keyboard="Numeric" FontSize="Medium" />
+                        <Entry Grid.Column="1" x:Name="Entry_Alto" Placeholder="Alto" Keyboard="Numeric" FontSize="Medium" />
+                    </Grid>
+                    <Grid Margin="0,18,0,0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="0.50*" />
+                            <ColumnDefinition Width="0.50*" />
+                        </Grid.ColumnDefinitions>
+                        <Entry Grid.Column="0" x:Name="Entry_Ancho" Placeholder="Ancho" Keyboard="Numeric" FontSize="Medium" />
+                        <Entry Grid.Column="1" x:Name="Entry_Peso" Placeholder="Peso" Keyboard="Numeric" FontSize="Medium" />
+                    </Grid>
+                    <Grid Margin="0,18,0,0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="0.33*" />
+                            <ColumnDefinition Width="0.33*" />
+                            <ColumnDefinition Width="0.33*" />
+                        </Grid.ColumnDefinitions>
+                        <Entry Grid.Column="0" x:Name="Entry_Unidades" Placeholder="Unidades" Keyboard="Numeric" FontSize="Medium" />
+                        <Entry Grid.Column="1" x:Name="Entry_UnidadesA" Placeholder="Auditadas" Keyboard="Numeric" FontSize="Medium" />
+                        <Entry Grid.Column="2" x:Name="Entry_Volumen" Placeholder="Volumen" Keyboard="Numeric" FontSize="Medium" />
+                    </Grid>
+                </StackLayout>
+
+                <StackLayout x:Name="ImageSection" Margin="0,5,0,0" Padding="5,5,5,5">
+                    <Image x:Name="image_cubic" HeightRequest="180" WidthRequest="150" Source="camera_icon_gray.png" />
+                </StackLayout>
+
+                <ActivityIndicator x:Name="ActivitySpinner" Color="Blue" IsRunning="True" />
+
+                <StackLayout x:Name="ButtonsCubicacion" Margin="0,0,0,0" VerticalOptions="End">
+                    <Button x:Name="Btn_Send" 
+                            Style="{StaticResource buttonStyle}" 
+                            Text="Enviar datos" 
+                            HeightRequest="60"
+                            TextColor="White" />
+                </StackLayout>
+  
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+
+</ContentPage>

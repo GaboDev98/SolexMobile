@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SolexMobileApp.Views.Modules.ImageGuiaPage"
+			 Title="Listado de Imagenes">
+
+	<ContentPage.ToolbarItems>
+		<ToolbarItem x:Name="Btn_CaptureNewPhoto" Icon="ic_camera_enhance_white_24dp.png" Text="Nueva foto" Clicked="CapturePhotoAsync" />
+	</ContentPage.ToolbarItems>
+
+	<ContentPage.Content>
+		<StackLayout VerticalOptions="FillAndExpand">
+            <StackLayout x:Name="LogoStack">
+                <Image x:Name="LoginIcon" Source="LoginIcon" Margin="0,20,0,0" />
+                <Label x:Name="Lbl_Guia" FontSize="Medium" VerticalTextAlignment="Center" VerticalOptions="Center" HorizontalTextAlignment="Center"/>
+            </StackLayout>
+
+            <ActivityIndicator x:Name="ActivitySpinner" Color="Blue" IsRunning="True" />
+
+            <StackLayout Padding="30,10,30,0">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="65*" />
+                        <ColumnDefinition Width="35*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid Grid.Column="0" VerticalOptions="Center">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="50*" />
+                            <RowDefinition Height="50*" />
+                        </Grid.RowDefinitions>
+                        <Label Text="Imagen #1" FontSize="Large" VerticalTextAlignment="Start" Grid.Row="0" Margin="0,20,0,0" />
+                        <Label x:Name="Fecha_1" Text="Fecha" FontSize="Default" VerticalTextAlignment="Start" Grid.Row="1" />
+                    </Grid>
+                    <Image x:Name="image_guia_1" HeightRequest="120" WidthRequest="80" Source="camera_icon_gray.png" Grid.Column="1" />
+                </Grid>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="65*" />
+                        <ColumnDefinition Width="35*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid Grid.Column="0" VerticalOptions="Center">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="50*" />
+                            <RowDefinition Height="50*" />
+                        </Grid.RowDefinitions>
+                        <Label Text="Imagen #2" FontSize="Large" VerticalTextAlignment="Start" Grid.Row="0" Margin="0,20,0,0" />
+                        <Label x:Name="Fecha_2" Text="Fecha" FontSize="Default" VerticalTextAlignment="Start" Grid.Row="1" />
+                    </Grid>
+                    <Image x:Name="image_guia_2" HeightRequest="120" WidthRequest="80" Source="camera_icon_gray.png" Grid.Column="1" />
+                </Grid>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="65*" />
+                        <ColumnDefinition Width="35*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid Grid.Column="0" VerticalOptions="Center">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="50*" />
+                            <RowDefinition Height="50*" />
+                        </Grid.RowDefinitions>
+                        <Label Text="Imagen #3" FontSize="Large" VerticalTextAlignment="Start" Grid.Row="0" Margin="0,20,0,0" />
+                        <Label x:Name="Fecha_3" Text="Fecha" FontSize="Default" VerticalTextAlignment="Start" Grid.Row="1" />
+                    </Grid>
+                    <Image x:Name="image_guia_3" HeightRequest="120" WidthRequest="80" Source="camera_icon_gray.png" Grid.Column="1" />
+                </Grid>
+                <StackLayout x:Name="Buttons">
+                    <Button x:Name="Btn_Send" 
+                        Style="{StaticResource buttonStyle}" 
+                        Text="Enviar" 
+                        BackgroundColor="#00549F"
+                        HeightRequest="60"
+                        TextColor="White" />
+                </StackLayout>
+            </StackLayout>
+        </StackLayout>
+	</ContentPage.Content>
+</ContentPage>

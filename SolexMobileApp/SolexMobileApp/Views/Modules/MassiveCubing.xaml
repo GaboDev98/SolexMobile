@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SolexMobileApp.Views.Modules.MassiveCubing"
+             Title="Cubicación Manual">
+    
+    <ContentPage.ToolbarItems>
+        <ToolbarItem x:Name="Btn_ClearRows" Icon="ic_clear_white_24dp.png" Text="Limpiar campos" />
+        <ToolbarItem x:Name="Btn_CaptureNewPhoto" Icon="ic_camera_enhance_white_24dp.png" Text="Nueva foto" />
+        <ToolbarItem x:Name="Btn_ScannerCodeBars" Icon="ic_refresh_barcode_white_24dp.png" Text="Escanear código de barras" />
+    </ContentPage.ToolbarItems>
+
+    <ContentPage.Content>
+        <StackLayout Padding="15,5,15,10" Orientation="Vertical">
+
+            <StackLayout VerticalOptions="Start">
+                <Label x:Name="Labl_Connectivity" FontAttributes="Bold" HorizontalTextAlignment="Center" TextColor="Red" IsVisible="False" />
+                <Label x:Name="Labl_Empresa" FontAttributes="Bold" HorizontalTextAlignment="Center" TextColor="DarkBlue" IsVisible="False" />
+            </StackLayout>
+
+            <StackLayout VerticalOptions="Start">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="0.20*" />
+                        <RowDefinition Height="0.20*" />
+                        <RowDefinition Height="0.10*" />
+                        <RowDefinition Height="0.10*" />
+                        <RowDefinition Height="0.40*" />
+                    </Grid.RowDefinitions>
+
+                    <Grid Grid.Row="0" VerticalOptions="Start">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="0.333*" />
+                            <ColumnDefinition Width="0.333*" />
+                            <ColumnDefinition Width="0.333*" />
+                        </Grid.ColumnDefinitions>
+                        <StackLayout Grid.Column="0">
+                            <Label x:Name="Labl_Uds_Pistoleadas" TextColor="Black" FontSize="15" HorizontalTextAlignment="Center" VerticalOptions="Start">Pistoleadas</Label>
+                            <Label x:Name="Unidades_Pistoleadas" TextColor="White" FontSize="50" HorizontalTextAlignment="Center" VerticalOptions="Start" Margin="5,8,5,18">0</Label>
+                        </StackLayout>
+                        <StackLayout Grid.Column="1">
+                            <Label x:Name="Labl_Uds_Faltantes" TextColor="Black" FontSize="15" HorizontalTextAlignment="Center" VerticalOptions="Start">Faltantes</Label>
+                            <Label x:Name="Unidades_Faltantes" TextColor="White" FontSize="50" HorizontalTextAlignment="Center" VerticalOptions="Start" Margin="5,8,5,18">0</Label>
+                        </StackLayout>
+                        <StackLayout Grid.Column="2">
+                            <Label x:Name="Labl_Uds_Total" TextColor="Black" FontSize="15" HorizontalTextAlignment="Center" VerticalOptions="Start">Total</Label>
+                            <Label x:Name="Total_Unidades" TextColor="White" FontSize="50" HorizontalTextAlignment="Center" VerticalOptions="Start" Margin="5,8,5,18">0</Label>
+                        </StackLayout>
+                    </Grid>
+
+                    <Grid Grid.Row="1" VerticalOptions="Start" Margin="0,5,0,0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="0.50*" />
+                            <RowDefinition Height="0.50*" />
+                        </Grid.RowDefinitions>
+                        <Entry Grid.Row="0" x:Name="Entry_CodeBars" Placeholder="Código de barras..." Keyboard="Numeric" />
+                        <Label Grid.Row="1" FontSize="15">Pistolee las unidades y luego digite las medidas en centímetros y el peso en kilos.</Label>
+                    </Grid>
+
+                    <Grid Grid.Row="2" VerticalOptions="Start">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="0.50*" />
+                            <ColumnDefinition Width="0.50*" />
+                        </Grid.ColumnDefinitions>
+                        <Entry Grid.Column="0" x:Name="Entry_Largo" Placeholder="Largo" Keyboard="Numeric" FontSize="Medium" />
+                        <Entry Grid.Column="1" x:Name="Entry_Alto" Placeholder="Alto" Keyboard="Numeric" FontSize="Medium" />
+                    </Grid>
+
+                    <Grid Grid.Row="3" VerticalOptions="Start">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="0.50*" />
+                            <ColumnDefinition Width="0.50*" />
+                        </Grid.ColumnDefinitions>
+                        <Entry Grid.Column="0" x:Name="Entry_Ancho" Placeholder="Ancho" Keyboard="Numeric" FontSize="Medium" />
+                        <Entry Grid.Column="1" x:Name="Entry_Peso" Placeholder="Peso" Keyboard="Numeric" FontSize="Medium" />
+                    </Grid>
+
+                    <StackLayout Grid.Row="4" x:Name="ImageSection" VerticalOptions="Start" Padding="5,5,5,5">
+                        <Image x:Name="image_cubic" HeightRequest="180" WidthRequest="150" Source="camera_icon_gray.png" />
+                    </StackLayout>
+
+                    <ActivityIndicator Grid.Row="4" x:Name="ActivitySpinner" VerticalOptions="Start" Color="Blue" IsRunning="True" />
+                    
+                </Grid>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

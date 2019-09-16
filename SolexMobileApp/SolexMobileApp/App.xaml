@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SolexMobileApp.App">
+	<Application.Resources>
+
+		<!-- Application resource dictionary -->
+		<ResourceDictionary>
+			<!-- Styles of the buttons the dashboard -->
+			<Style x:Key="buttonStyle" TargetType="Button">
+				<Setter Property="HorizontalOptions" Value="FillAndExpand" />
+				<Setter Property="VerticalOptions" Value="CenterAndExpand" />
+				<Setter Property="HeightRequest" Value="50" />
+				<Setter Property="BackgroundColor" Value="#00549F" />
+				<Setter Property="TextColor" Value="White" />
+			</Style>
+            <!-- Styles of the big buttons -->
+            <Style x:Key="buttonBigStyle" TargetType="Button">
+                <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+                <Setter Property="VerticalOptions" Value="CenterAndExpand" />
+                <Setter Property="BackgroundColor" Value="#00549F" />
+                <Setter Property="TextColor" Value="White" />
+            </Style>
+            <!-- Styles of the buttons the detail view -->
+			<Style x:Key="buttonInverseDetailViewStyle" TargetType="Button">
+				<Setter Property="HorizontalOptions" Value="FillAndExpand" />
+				<Setter Property="VerticalOptions" Value="CenterAndExpand" />
+				<Setter Property="BackgroundColor" Value="#00549F" />
+				<Setter Property="HeightRequest" Value="50" />
+				<Setter Property="TextColor" Value="White" />
+			</Style>
+			<Style x:Key="buttonDetailViewStyle" TargetType="Button">
+				<Setter Property="HorizontalOptions" Value="FillAndExpand" />
+				<Setter Property="VerticalOptions" Value="CenterAndExpand" />
+				<Setter Property="BackgroundColor" Value="#CCCCCC" />
+				<Setter Property="HeightRequest" Value="50" />
+				<Setter Property="TextColor" Value="Black" />
+			</Style>
+			<!-- Styles of the labels -->
+			<Style x:Key="columnStyle" TargetType="Label">
+				<Setter Property="HorizontalOptions" Value="FillAndExpand" />
+				<Setter Property="VerticalOptions" Value="CenterAndExpand" />
+			</Style>
+			<!-- Styles of the buttons -->
+			<Style x:Key="buttonCircularStyle" TargetType="Button">
+				<Setter Property="HorizontalOptions" Value="FillAndExpand" />
+				<Setter Property="VerticalOptions" Value="CenterAndExpand" />
+				<Setter Property="BackgroundColor" Value="#00549F" />
+				<Setter Property="TextColor" Value="White" />
+			</Style>
+		</ResourceDictionary>
+
+	</Application.Resources>
+
+</Application>

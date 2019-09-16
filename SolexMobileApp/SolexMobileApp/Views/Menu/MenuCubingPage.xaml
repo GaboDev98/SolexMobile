@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:Controls="clr-namespace:SolexMobileApp.Controls"
+             x:Class="SolexMobileApp.Views.Menu.MenuCubingPage">
+    
+    <StackLayout VerticalOptions="FillAndExpand">
+        
+        <StackLayout x:Name="LogoStack">
+            <Image x:Name="LoginIcon" Source="LoginIcon" Margin="0,80,0,0" />
+            <Label Text="{Binding Model.Constants.AppName}" FontSize="Medium" VerticalTextAlignment="Center" VerticalOptions="Center" HorizontalTextAlignment="Center"/>
+        </StackLayout>
+        
+        <StackLayout Padding="30,60,30,0">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="0.333*" />
+                    <RowDefinition Height="0.333*" />
+                    <RowDefinition Height="0.333*" />
+                </Grid.RowDefinitions>
+                <Controls:XButton Grid.Row="0" x:Name="Btn_CubicNormal" Clicked="CubicNormal" Text="Cubicación Normal" VerticalOptions="FillAndExpand" />
+                <Controls:XButton Grid.Row="1" x:Name="Btn_CubicMasiva" Clicked="CubicMasiva" Text="Cubicación Masiva" VerticalOptions="FillAndExpand" />
+                <Controls:XButton Grid.Row="2" x:Name="Btn_Back" Clicked="MenuPrincipal" Text="Menú Principal" VerticalOptions="FillAndExpand" />
+            </Grid>
+        </StackLayout>
+        
+    </StackLayout>
+    
+</ContentPage>

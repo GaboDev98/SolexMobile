@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SolexMobileApp.Views.Modules.DetailGuiaPage"
+             Title="Detalle de la Guía">
+
+    <ContentPage.ToolbarItems>
+      <ToolbarItem x:Name="BtnDetailGeo" Icon="ic_location_searching_white_24dp.png" Text="Geo" />
+    </ContentPage.ToolbarItems>
+
+    <ContentPage.Content>
+        <ScrollView VerticalOptions="StartAndExpand">
+            <StackLayout VerticalOptions="FillAndExpand" Padding="30,20,30,20">
+
+                <StackLayout x:Name="LogoStack" VerticalOptions="StartAndExpand">
+                    <Label x:Name="Labl_Connectivity" HorizontalTextAlignment="Center" TextColor="White" BackgroundColor="Red" />
+                    <Image x:Name="LoginIcon" Source="LoginIcon" />
+                    <Label Text="{Binding App.titleApp}" FontSize="Medium" VerticalTextAlignment="Center" VerticalOptions="Center" HorizontalTextAlignment="Center"/>
+                </StackLayout>
+                
+                <ActivityIndicator x:Name="ActivitySpinner" Color="Blue" IsRunning="True" IsVisible="False" />
+
+                <StackLayout VerticalOptions="StartAndExpand">
+                    <Label x:Name="Lbl_Guia" FontSize="Medium" FontAttributes="Bold" />
+                    <Label x:Name="Lbl_Planilla" />
+                    <Label x:Name="Lbl_Cliente" />
+                    <Label x:Name="Lbl_DireccionDestino" />
+                    <Label x:Name="Lbl_Ciudad" />
+                    <Label x:Name="Lbl_Unidades" />
+                </StackLayout>
+
+                <StackLayout VerticalOptions="StartAndExpand">
+                    <Entry x:Name="Entry_Receives" Placeholder="Recibe" PlaceholderColor="SlateGray" TextColor="SlateGray" />
+                    <Entry x:Name="Entry_Identification" Placeholder="Identificación" PlaceholderColor="SlateGray" TextColor="SlateGray" Keyboard="Numeric" />
+                    <Entry x:Name="Entry_ArrivalToThePoint" Placeholder="Llegada al punto" IsEnabled="False" />
+                    <Picker x:Name="ListEstadosPicker" 
+                        Title="Seleccione un estado..."  
+                        ItemDisplayBinding="{Binding Nombre}"
+                        SelectedItem="{Binding selectedEstadoGuia}" 
+                        IsEnabled="False" />
+                </StackLayout>
+
+                <StackLayout VerticalOptions="StartAndExpand">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="0.25*" />
+                            <ColumnDefinition Width="0.25*" />
+                            <ColumnDefinition Width="0.25*" />
+                            <ColumnDefinition Width="0.25*" />
+                        </Grid.ColumnDefinitions>
+                        <Button Grid.Column="0" 
+                            x:Name="Btn_AttachImage" 
+                            Image="ic_camera_enhance_white_24dp.png" 
+                            Style="{StaticResource buttonCircularStyle}" 
+                            TextColor="White" />
+                        <Button Grid.Column="1" 
+                            x:Name="Btn_SavePartialDelivered" 
+                            Image="ic_partial_white_24dp.png" 
+                            Style="{StaticResource buttonCircularStyle}" 
+                            TextColor="White" />
+                        <Button Grid.Column="2" 
+                            x:Name="Btn_SaveClearDelivered" 
+                            Image="ic_clear_white_24dp.png" 
+                            Style="{StaticResource buttonCircularStyle}" 
+                            TextColor="White" />
+                        <Button Grid.Column="3" 
+                            x:Name="Btn_SaveDoneDelivered" 
+                            Image="ic_done_white_24dp.png" 
+                            Style="{StaticResource buttonCircularStyle}" 
+                            TextColor="White" />
+                    </Grid>
+                </StackLayout>
+                
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

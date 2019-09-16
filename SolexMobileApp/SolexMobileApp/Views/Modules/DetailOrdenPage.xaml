@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SolexMobileApp.Views.Modules.DetailOrdenCarguePage"
+             Title="Detalle de la Orden de Cargue">
+    
+    <ContentPage.Content>
+        <ScrollView VerticalOptions="StartAndExpand">
+            <StackLayout VerticalOptions="FillAndExpand" Padding="30,20,30,20">
+
+                <StackLayout x:Name="LogoStack" VerticalOptions="StartAndExpand">
+                    <Label x:Name="Labl_Connectivity" HorizontalTextAlignment="Center" TextColor="White" BackgroundColor="Red" />
+                    <Image x:Name="LoginIcon" Source="LoginIcon" />
+                    <Label Text="{Binding App.titleApp}" FontSize="Medium" VerticalTextAlignment="Center" VerticalOptions="Center" HorizontalTextAlignment="Center"/>
+                </StackLayout>
+
+                <ActivityIndicator x:Name="ActivitySpinner" Color="Blue" IsRunning="True" IsVisible="False" />
+
+                <StackLayout VerticalOptions="StartAndExpand">
+                    <Label x:Name="Lbl_Orden" FontSize="Medium" FontAttributes="Bold" />
+                    <Label x:Name="Lbl_Planilla" />
+                    <Label x:Name="Lbl_Cliente" />
+                    <Label x:Name="Lbl_DireccionDestino" />
+                    <Label x:Name="Lbl_Ciudad" />
+                    <Label x:Name="Lbl_Unidades" />
+                </StackLayout>
+
+                <StackLayout VerticalOptions="StartAndExpand">
+                    <Entry x:Name="Entry_Receives" Placeholder="Nombre de quien entrega" PlaceholderColor="SlateGray" TextColor="SlateGray" />
+                    <Entry x:Name="Entry_DocsRecogidos" Placeholder="Documentos recogidos" PlaceholderColor="SlateGray" TextColor="SlateGray" Keyboard="Numeric" />
+                    <Entry x:Name="Entry_UndsRecogidas" Placeholder="Unidades recogidas" PlaceholderColor="SlateGray" TextColor="SlateGray" Keyboard="Numeric" />
+                    <Entry x:Name="Entry_ArrivalToThePoint" Placeholder="Llegada al punto" IsEnabled="False" />
+                </StackLayout>
+
+                <StackLayout VerticalOptions="StartAndExpand">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="0.333*" />
+                            <ColumnDefinition Width="0.333*" />
+                            <ColumnDefinition Width="0.333*" />
+                        </Grid.ColumnDefinitions>
+                        <Button Grid.Column="0" 
+                            x:Name="Btn_ArrivalToThePoint" 
+                            Image="ic_update_white_24dp.png" 
+                            Style="{StaticResource buttonCircularStyle}" 
+                            TextColor="White" />
+                        <Button Grid.Column="1" 
+                            x:Name="Btn_SaveClearDetails" 
+                            Image="ic_clear_white_24dp.png" 
+                            Style="{StaticResource buttonCircularStyle}" 
+                            TextColor="White" />
+                        <Button Grid.Column="2" 
+                            x:Name="Btn_SaveDoneDetails" 
+                            Image="ic_done_white_24dp.png" 
+                            Style="{StaticResource buttonCircularStyle}" 
+                            TextColor="White" />
+                    </Grid>
+                </StackLayout>
+                
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

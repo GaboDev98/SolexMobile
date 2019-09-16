@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Devices>
+  <Device id="M180BSSODBA457">
+    <ResultingAbi>armeabi-v7a</ResultingAbi>
+    <SdkVersion>19</SdkVersion>
+  </Device>
+  <Device id="M180BSSODBA411">
+    <ResultingAbi>armeabi-v7a</ResultingAbi>
+    <SdkVersion>19</SdkVersion>
+  </Device>
+  <Device id="M180BSSODBA476">
+    <ResultingAbi>armeabi-v7a</ResultingAbi>
+    <SdkVersion>19</SdkVersion>
+  </Device>
+  <Device id="192.168.91.101:5555">
+    <ResultingAbi>x86</ResultingAbi>
+    <SdkVersion>16</SdkVersion>
+  </Device>
+  <Device id="4200b113d42b547b">
+    <ResultingAbi>armeabi-v7a</ResultingAbi>
+    <SdkVersion>26</SdkVersion>
+  </Device>
+  <Device id="M180BSSODBA478">
+    <ResultingAbi>armeabi-v7a</ResultingAbi>
+    <SdkVersion>19</SdkVersion>
+  </Device>
+</Devices>
